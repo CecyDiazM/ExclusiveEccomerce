@@ -1,0 +1,275 @@
+:root {
+    --bg-principal: #fcfbfa;
+    --bg-tarjetas: #ffffff;
+    --texto-oscuro: #2c2520;
+    --texto-claro: #6e655f;
+    --color-accent: #8b5a2b; /* Café cuero */
+    --color-accent-hover: #6e441f;
+    --color-oro: #dfb021;
+    --color-stock: #27ae60;
+    --sombra-suave: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --sombra-tarjeta: 0 4px 15px rgba(44, 37, 32, 0.08);
+    --fuente-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --transicion: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-base);
+    background-color: var(--bg-principal);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. SECCIÓN PRODUCTOS
+   ========================================================================== */
+.productos__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.productos__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--texto-oscuro);
+    margin-bottom: 40px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.productos__title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Cuadrícula Responsiva de Productos */
+.contenedor__productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* Tarjetas de Producto (Preview) */
+.preview {
+    background-color: var(--bg-tarjetas);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--sombra-tarjeta);
+    transition: var(--transicion);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.preview:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(44, 37, 32, 0.15);
+}
+
+/* Imágenes de los productos */
+.preview img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #f0f0f0;
+}
+
+.preview h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--texto-oscuro);
+    margin-bottom: 10px;
+    min-height: 40px; /* Alinea los títulos si unos son más largos */
+    display: flex;
+    align-items: center;
+}
+
+/* Estrellas y Stock */
+.stars {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stars i {
+    color: var(--color-oro);
+    font-size: 0.95rem;
+}
+
+.stars span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-stock);
+    background-color: rgba(39, 174, 96, 0.1);
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 8px;
+    text-transform: uppercase;
+}
+
+/* Descripción de la tarjeta */
+.preview p {
+    font-size: 0.9rem;
+    color: var(--texto-claro);
+    flex-grow: 1; /* Empuja el contenido para mantener tarjetas simétricas */
+}
+
+/* Botón Volver */
+.btn__back {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: transparent;
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: var(--transicion);
+    margin-top: 20px;
+}
+
+.btn__back:hover {
+    background-color: var(--color-accent);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   3. SECCIÓN CONTACTO Y FOOTER
+   ========================================================================== */
+.contacto__container {
+    background-color: var(--texto-oscuro);
+    color: #ffffff;
+    padding: 60px 20px 20px 20px;
+    margin-top: 40px;
+}
+
+.contacto__content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.contacto__principal {
+    flex: 1;
+    min-width: 280px;
+}
+
+.contacto__title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    position: relative;
+}
+
+.contacto__info {
+    font-size: 1rem;
+    color: #d1c7bd;
+    line-height: 1.8;
+}
+
+.contacto__info i {
+    color: #ffffff;
+    margin-left: 5px;
+}
+
+/* Redes Sociales */
+.rr__ss--contenido {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rrss__title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.rr__ss {
+    display: flex;
+    gap: 20px;
+}
+
+.rr__ss a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: var(--transicion);
+}
+
+.rr__ss a:hover {
+    background-color: var(--color-accent);
+    transform: scale(1.1);
+}
+
+/* Derechos Reservados */
+.derechos {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    color: #8c8177;
+    text-align: center;
+}
+
+/* ==========================================================================
+   4. MEDIA QUERIES (ADAPTACIÓN MÓVIL)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .contacto__content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contacto__content {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rr__ss--contenido {
+        align-items: center;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
